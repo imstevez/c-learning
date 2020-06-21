@@ -22,6 +22,4 @@ int main() {
 	printf("deleted value: %d\n", v);
 	
 	list_destroy(l);
-
-	list_display(l);
 }

@@ -27,9 +27,7 @@ void list_display(list *l)
 }
 
 // 向带头链表指定插入节点
-// 返回值：	 0 成功
-// 			-1 内存申请失败
-// 			-2 指定位置不存在
+// 返回值：0 成功 -1 内存申请失败 -2 指定位置不存在
 int list_insert_at(list *l, int n, datatype *data)
 {
 	struct node_st *cur = l, *new;
@@ -55,8 +53,7 @@ int list_insert_at(list *l, int n, datatype *data)
 }
 
 // 删除带头链表指定位置的节点
-// 返回值：	 0 成功
-// 			-2 指定位置不存在
+// 返回值：0 成功 -2 指定位置不存在
 int list_delete_at(list *l, int n, datatype *data)
 {
 	struct node_st *cur = l, *nod;
@@ -77,8 +74,7 @@ int list_delete_at(list *l, int n, datatype *data)
 }
 
 // 按值递增顺序向带头链表中插入节点
-// 返回值：	 0 成功
-// 			-1 内存申请失败
+// 返回值：0 成功 -1 内存申请失败
 int list_order_insert(list *l, datatype *data)
 {
 	struct node_st *cur = l, *new;
@@ -97,7 +93,7 @@ int list_order_insert(list *l, datatype *data)
 }
 
 // 销毁带头链表
-// 返回值：	 0：成功
+// 返回值：0 成功
 int list_destroy(list *l)
 {
 	struct node_st *cur = l, *nod;
