@@ -3,7 +3,7 @@
 #include "list.h"
 
 
-// 创建带头链表
+// 创建链表
 list *list_create()
 {
 	list *me;
@@ -14,9 +14,9 @@ list *list_create()
 	
 	me->next = NULL;
 	return me;
-};
+}
 
-// 打印带头链表
+// 打印链表
 void list_display(list *l)
 {
 	struct node_st* cur;
@@ -26,7 +26,7 @@ void list_display(list *l)
 	printf("\n");
 }
 
-// 向带头链表指定插入节点
+// 指定位置插入节点
 // 返回值：0 成功 -1 内存申请失败 -2 指定位置不存在
 int list_insert_at(list *l, int n, datatype *data)
 {
@@ -52,7 +52,7 @@ int list_insert_at(list *l, int n, datatype *data)
 	return 0;
 }
 
-// 删除带头链表指定位置的节点
+// 删除指定位置节点
 // 返回值：0 成功 -2 指定位置不存在
 int list_delete_at(list *l, int n, datatype *data)
 {
@@ -68,12 +68,13 @@ int list_delete_at(list *l, int n, datatype *data)
 	nod = cur->next;
 	*data = nod->data;
 	cur->next = nod->next;
+	nod->next = NULL;
 	free(nod);
 
 	return 0;
 }
 
-// 按值递增顺序向带头链表中插入节点
+// 升序插入节点
 // 返回值：0 成功 -1 内存申请失败
 int list_order_insert(list *l, datatype *data)
 {
@@ -92,7 +93,7 @@ int list_order_insert(list *l, datatype *data)
 	return 0;
 }
 
-// 销毁带头链表
+// 销毁链表
 // 返回值：0 成功
 int list_destroy(list *l)
 {

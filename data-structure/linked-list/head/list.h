@@ -23,7 +23,7 @@ int list_insert_at(list *, int, datatype *);
 // 删除指定位置节点
 int list_delete_at(list *, int n, datatype *);
 
-// 按递增顺序插入节点
+// 升序插入节点
 int list_order_insert(list *, datatype *);
 
 // 销毁链表
