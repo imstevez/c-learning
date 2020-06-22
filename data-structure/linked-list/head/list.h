@@ -17,6 +17,9 @@ list *list_create();
 // 打印链表
 void list_display();
 
+// 列表是否为空
+int list_is_empty(list *);
+
 // 指定位置插入节点
 int list_insert_at(list *, int, datatype *);
 

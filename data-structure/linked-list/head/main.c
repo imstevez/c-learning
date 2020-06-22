@@ -15,7 +15,7 @@ int main() {
 		list_order_insert(l, &i);
 	}
 	
-	list_delete_at(l, 6, &v);
+	list_delete_at(l, 0, &v);
 
 	list_display(l);
 	

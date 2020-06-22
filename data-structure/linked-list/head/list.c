@@ -26,14 +26,27 @@ void list_display(list *l)
 	printf("\n");
 }
 
+// 链表是否为空
+int list_is_empty(list *l)
+{
+	if (l->next == NULL) {
+		return 0;
+	}
+	return 1;
+}
+
 // 指定位置插入节点
 // 返回值：0 成功 -1 内存申请失败 -2 指定位置不存在
 int list_insert_at(list *l, int n, datatype *data)
 {
+	if (n < 0) {
+		return -2;
+	}
+
 	struct node_st *cur = l, *new;
 	int i;
 
-	for (i = 1; cur != NULL && i < n; i++) {
+	for (i = 0; cur != NULL && i < n; i++) {
 		cur = cur->next;
 	}
 	if (cur == NULL) {
@@ -56,9 +69,14 @@ int list_insert_at(list *l, int n, datatype *data)
 // 返回值：0 成功 -2 指定位置不存在
 int list_delete_at(list *l, int n, datatype *data)
 {
+	if (n < 0) {
+		return -2;
+	}
+
 	struct node_st *cur = l, *nod;
 	int i;
-	for (i = 1; i < n && cur->next != NULL; i++) {
+
+	for (i = 0; i < n && cur->next != NULL; i++) {
 		cur = cur->next;
 	}
 	if (cur->next == NULL) {
